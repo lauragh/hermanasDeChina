@@ -1,0 +1,12 @@
+const fs = require('fs');
+// targetPath should reflect where the .env file should go
+const targetPath = './src/environments/environment.prod.ts';
+const envConfigFile = `
+export const environment = {
+  production: true,
+  supabaseUrl: '${process.env.supabaseUrl}',
+  supabaseKey: '${process.env.supabaseKey}'
+};
+`;
+fs.writeFileSync(targetPath, envConfigFile);
+console.log(`Output generated at ${targetPath}`);
