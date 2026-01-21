@@ -1,6 +1,8 @@
 const fs = require('fs');
 // targetPath should reflect where the .env file should go
 const targetPath = './src/environments/environment.prod.ts';
+console.log('SUPABASE URL:', process.env.supabaseUrl);
+
 const envConfigFile = `
 export const environment = {
   production: true,
